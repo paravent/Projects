@@ -3,7 +3,7 @@ public class UnitMark extends mainClass {
 
 	double courseWork1, courseWork2; 
 	
-	UnitMark(double courseWork1, double courseWork2)
+	UnitMark(int courseWork1, int courseWork2)
 	{
 		
 		this.courseWork1 = courseWork1;
@@ -11,14 +11,14 @@ public class UnitMark extends mainClass {
 		 
 	}
 	
-	double calculateUnitGrade(double courseWork1, double courseWork2) {
+	double calculateUnitGrade(int courseWork1, int courseWork2) {
 		
 		return((courseWork1 + courseWork2)/2); 
 		
 		
 	}
 	
-	String calculateUnitClassification(double courseWork1 , double courseWork2) {
+	String calculateUnitClassification(int courseWork1 , int courseWork2) {
 		double finalGrade = ((courseWork1 + courseWork2)/2); 
 		if(finalGrade >= 70.0) {
 			 return("I"); 
@@ -31,7 +31,8 @@ public class UnitMark extends mainClass {
 		}
 		else
 			return("FAIL");
-		
-		
+
 	}
+	
+	
 }
