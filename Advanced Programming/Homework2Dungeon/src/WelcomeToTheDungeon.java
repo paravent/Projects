@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Random; 
-
+import java.util.Random;
 
 public class WelcomeToTheDungeon {
 
@@ -56,7 +55,20 @@ public class WelcomeToTheDungeon {
 		while(myPlayer.getHealth() > 0 && dungeonMonsters.size() != 0) {
 			
 			System.out.println("Your opponent is... " + dungeonMonsters.get(0).getName());
+			if(dungeonMonsters.get(0).getName() == "Dragon") {
+				dragonASCII(); 
+			}
+			if(dungeonMonsters.get(0).getName() == "Goblin") {
+				goblinASCII(); 
+			}
+			if(dungeonMonsters.get(0).getName() == "Witch") {
+				witchASCII(); 
+			}
+			if(dungeonMonsters.get(0).getName() == "Skeleton") {
+				skeletonASCII(); 
+			}
 			System.out.println("-------------------------------------------------------");
+			try{Thread.sleep(1000);}catch(InterruptedException e){System.out.println(e);}
 			int damageTaken = dungeonMonsters.get(0).getStrength(); 
 			System.out.println("You take " + "---" + damageTaken + "---" + " Damage");
 			System.out.println("-------------------------------------------------------");
@@ -81,10 +93,6 @@ public class WelcomeToTheDungeon {
 	}
 	
 	static void printMenuScreen() {
-		System.out.println(" _ __ ___   ___ _ __  _   _ \r\n" + 
-				"| '_ ` _ \\ / _ \\ '_ \\| | | |\r\n" + 
-				"| | | | | |  __/ | | | |_| |\r\n" + 
-				"|_| |_| |_|\\___|_| |_|\\__,_|");
 		
 		System.out.println("Welcome to the dungeon...");
 	}
@@ -94,6 +102,104 @@ public class WelcomeToTheDungeon {
 		for(int i=0; i<x; i++) {
 			monsters.add(Monster); 
 		}
+	}
+	
+	static void dragonASCII() {
+		
+		System.out.println("                  ^\\    ^                  \r\n" + 
+				"                      / \\\\  / \\                 \r\n" + 
+				"                     /.  \\\\/   \\      |\\___/|   \r\n" + 
+				"  *----*           / / |  \\\\    \\  __/  O  O\\   \r\n" + 
+				"  |   /          /  /  |   \\\\    \\_\\/  \\     \\     \r\n" + 
+				" / /\\/         /   /   |    \\\\   _\\/    '@___@      \r\n" + 
+				"/  /         /    /    |     \\\\ _\\/       |U\r\n" + 
+				"|  |       /     /     |      \\\\\\/        |\r\n" + 
+				"\\  |     /_     /      |       \\\\  )   \\ _|_\r\n" + 
+				"\\   \\       ~-./_ _    |    .- ; (  \\_ _ _,\\'\r\n" + 
+				"~    ~.           .-~-.|.-*      _        {-,\r\n" + 
+				" \\      ~-. _ .-~                 \\      /\\'\r\n" + 
+				"  \\                   }            {   .*\r\n" + 
+				"   ~.                 '-/        /.-~----.\r\n" + 
+				"     ~- _             /        >..----.\\\\\\\r\n" + 
+				"         ~ - - - - ^}_ _ _ _ _ _ _.-\\\\\\");
+	}
+	
+	static void goblinASCII() {
+		
+		System.out.println(" ,      ,\r\n" + 
+				"            /(.-\"\"-.)\\\r\n" + 
+				"        |\\  \\/      \\/  /|\r\n" + 
+				"        | \\ / =.  .= \\ / |\r\n" + 
+				"        \\( \\   o\\/o   / )/\r\n" + 
+				"         \\_, '-/  \\-' ,_/\r\n" + 
+				"           /   \\__/   \\\r\n" + 
+				"           \\ \\__/\\__/ /\r\n" + 
+				"         ___\\ \\|--|/ /___\r\n" + 
+				"       /`    \\      /    `\\\r\n" + 
+				"  jgs /       '----'       \\");
+	}
+	
+	static void witchASCII() {
+		
+		System.out.println("    __#^\r\n" + 
+				"                       _####\"\r\n" + 
+				"                ]######_*##\"\r\n" + 
+				"                /#######_#            _____\r\n" + 
+				"               **#\" \"\"####_         _########_ ___\r\n" + 
+				"               \"\"##___########*#___################__,\r\n" + 
+				"  ..._            #\"\" \"###############\"    \"########\"\r\n" + 
+				"  ^**#__-=.._     *_    \"##\r\n" + 
+				"      \"\"\"*####\"#**^\"____  \"#_\r\n" + 
+				"             \"##***#\"\"\"~   I#\r\n" + 
+				"               #__#*_____._##_-<.__     ___\r\n" + 
+				"                *###########\"\"^**#C__-=#\"\"~#__  __##       -\r\n" + 
+				"                  \"\"\"#,_\"##c       \"\"\"*########\"\"\"*##c         _\r\n" + 
+				"                       #_###           \"^^\"^####*_ {##   *\r\n" + 
+				"                      *#^                     \"#_####            \"\r\n" + 
+				"                      \"                        ###*#  _ =    -\r\n" + 
+				"                                                      ~      .   `");
+	}
+	
+	static void skeletonASCII() {
+		
+		System.out.println("      _.--\"\"-._\r\n" + 
+				"  .                         .\"         \".\r\n" + 
+				" / \\    ,^.         /(     Y             |      )\\\r\n" + 
+				"/   `---. |--'\\    (  \\__..'--   -   -- -'\"\"-.-'  )\r\n" + 
+				"|        :|    `>   '.     l_..-------.._l      .'\r\n" + 
+				"|      __l;__ .'      \"-.__.||_.-'v'-._||`\"----\"\r\n" + 
+				" \\  .-' | |  `              l._       _.'\r\n" + 
+				"  \\/    | |                   l`^^'^^'j\r\n" + 
+				"        | |                _   \\_____/     _\r\n" + 
+				"        j |               l `--__)-'(__.--' |\r\n" + 
+				"        | |               | /`---``-----'\"1 |  ,-----.\r\n" + 
+				"        | |               )/  `--' '---'   \\'-'  ___  `-.\r\n" + 
+				"        | |              //  `-'  '`----'  /  ,-'   I`.  \\\r\n" + 
+				"      _ L |_            //  `-.-.'`-----' /  /  |   |  `. \\\r\n" + 
+				"     '._' / \\         _/(   `/   )- ---' ;  /__.J   L.__.\\ :\r\n" + 
+				"      `._;/7(-.......'  /        ) (     |  |            | |\r\n" + 
+				"      `._;l _'--------_/        )-'/     :  |___.    _._./ ;\r\n" + 
+				"        | |                 .__ )-'\\  __  \\  \\  I   1   / /\r\n" + 
+				"        `-'                /   `-\\-(-'   \\ \\  `.|   | ,' /\r\n" + 
+				"                           \\__  `-'    __/  `-. `---'',-'\r\n" + 
+				"                              )-._.-- (        `-----'\r\n" + 
+				"                             )(  l\\ o ('..-.\r\n" + 
+				"                       _..--' _'-' '--'.-. |\r\n" + 
+				"                __,,-'' _,,-''            \\ \\\r\n" + 
+				"               f'. _,,-'                   \\ \\\r\n" + 
+				"              ()--  |                       \\ \\\r\n" + 
+				"                \\.  |                       /  \\\r\n" + 
+				"                  \\ \\                      |._  |\r\n" + 
+				"                   \\ \\                     |  ()|\r\n" + 
+				"                    \\ \\                     \\  /\r\n" + 
+				"                     ) `-.                   | |\r\n" + 
+				"                    // .__)                  | |\r\n" + 
+				"                 _.//7'                      | |\r\n" + 
+				"               '---'                         j_| `\r\n" + 
+				"                                            (| |\r\n" + 
+				"                                             |  \\\r\n" + 
+				"                                             |lllj\r\n" + 
+				"                                             ||||");
 	}
 
 }
