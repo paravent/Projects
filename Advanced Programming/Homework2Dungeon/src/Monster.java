@@ -20,21 +20,7 @@ public class Monster {
 		return this.name; 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }
 

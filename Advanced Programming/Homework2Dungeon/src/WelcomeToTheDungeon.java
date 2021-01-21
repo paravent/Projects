@@ -20,7 +20,6 @@ public class WelcomeToTheDungeon {
 		Monster Witch = new Monster(8, "Witch");
 		Monster Skeleton = new Monster(2, "Skeleton");
 		
-		//Choose monster at random 
 
 		ArrayList<Monster> monsters = new ArrayList<Monster>(); 
 		addObject(monsters, 1, Dragon);
@@ -38,8 +37,7 @@ public class WelcomeToTheDungeon {
 			dungeonMonsters.add(monsters.get(randomNumber));
 			myPlayer.setScore(monsters.get(randomNumber).getStrength() + myPlayer.getScore());
 			
-			
-			
+
 			printMenuScreen(); 
 			System.out.println("You're currently facing  " +  dungeonMonsters.size() + "  monsters, add 1 more");
 			System.out.println("Enter '1' to Add a monster and '2' to continue as is.. if you dare");
@@ -68,7 +66,7 @@ public class WelcomeToTheDungeon {
 				skeletonASCII(); 
 			}
 			System.out.println("-------------------------------------------------------");
-			try{Thread.sleep(1000);}catch(InterruptedException e){System.out.println(e);}
+			try{Thread.sleep(1000);}catch(InterruptedException e){System.out.println(e);} //Wait 1 seconds
 			int damageTaken = dungeonMonsters.get(0).getStrength(); 
 			System.out.println("You take " + "---" + damageTaken + "---" + " Damage");
 			System.out.println("-------------------------------------------------------");
@@ -86,6 +84,7 @@ public class WelcomeToTheDungeon {
 			System.out.println("Score --" + myPlayer.getScore());
 		}
 		else {
+			System.out.println("-------------------------------------------------------");
 			System.out.println("Loser");
 		}
 		inputs.close();
@@ -136,7 +135,7 @@ public class WelcomeToTheDungeon {
 				"           \\ \\__/\\__/ /\r\n" + 
 				"         ___\\ \\|--|/ /___\r\n" + 
 				"       /`    \\      /    `\\\r\n" + 
-				"  jgs /       '----'       \\");
+				"     /       '----'       \\");
 	}
 	
 	static void witchASCII() {
